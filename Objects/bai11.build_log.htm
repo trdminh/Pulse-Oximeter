@@ -1,0 +1,319 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.31.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Minh Doan, PTIT, LIC=X96CK-ZJVKH-12ULE-5QZUI-7HGEU-ZG84M
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.31.0.0
+Toolchain Path:  E:\KeilC\core\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.14
+Assembler:       Armasm.exe V6.14
+Linker/Locator:  ArmLink.exe V6.14
+Library Manager: ArmAr.exe V6.14
+Hex Converter:   FromElf.exe V6.14
+CPU DLL:         SARMCM3.DLL V5.31.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
+Dialog DLL:      TCM.DLL V1.46.0.0
+ 
+<h2>Project:</h2>
+E:\Project\2025\bai11\bai11.uvprojx
+Project File Date:  11/22/2025
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.14', folder: 'E:\KeilC\core\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+main.c(2): warning: In file included from...
+FreeRTOS/Inc\FreeRTOS.h(59): warning: In file included from...
+FreeRTOS/Inc/FreeRTOSConfig.h(140): warning: 'configASSERT' macro redefined [-Wmacro-redefined]
+#define configASSERT( x ) if ((x) == 0) {taskDISABLE_INTERRUPTS(); for( ;; );}
+        ^
+FreeRTOS/Inc/FreeRTOSConfig.h(55): note: previous definition is here
+#define configASSERT( x ) if( ( x ) == 0 ) { for( ;; ); }
+        ^
+main.c(7): warning: In file included from...
+./max30102.h(44): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+main.c(17): warning: no previous extern declaration for non-static variable 'buffer_index' [-Wmissing-variable-declarations]
+int buffer_index = 0;
+    ^
+main.c(17): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int buffer_index = 0;
+^
+main.c(19): warning: no previous extern declaration for non-static variable 'global_heart_rate' [-Wmissing-variable-declarations]
+float global_heart_rate = 0.0f;
+      ^
+main.c(19): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+float global_heart_rate = 0.0f;
+^
+main.c(20): warning: no previous extern declaration for non-static variable 'global_spo2' [-Wmissing-variable-declarations]
+float global_spo2 = 0.0f;
+      ^
+main.c(20): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+float global_spo2 = 0.0f;
+^
+main.c(23): warning: no previous extern declaration for non-static variable 'device_active' [-Wmissing-variable-declarations]
+int device_active = 1;
+    ^
+main.c(23): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int device_active = 1;
+^
+main.c(24): warning: no previous extern declaration for non-static variable 'zero_count' [-Wmissing-variable-declarations]
+int zero_count = 0;
+    ^
+main.c(24): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int zero_count = 0;
+^
+main.c(28): warning: no previous extern declaration for non-static variable 'hr_index' [-Wmissing-variable-declarations]
+int hr_index = 0;
+    ^
+main.c(28): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int hr_index = 0;
+^
+main.c(184): warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+                if (heart_rate == 0 && spo2 == 0)
+                    ~~~~~~~~~~ ^  ~
+main.c(184): warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+                if (heart_rate == 0 && spo2 == 0)
+                                       ~~~~ ^  ~
+main.c(203): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+                sprintf(buffer, "Heart Rate: %.1f BPM, SpO2: %.1f%%\r\n", heart_rate, spo2);
+                ~~~~~~~                                                   ^~~~~~~~~~
+main.c(203): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+                sprintf(buffer, "Heart Rate: %.1f BPM, SpO2: %.1f%%\r\n", heart_rate, spo2);
+                ~~~~~~~                                                               ^~~~
+main.c(157): warning: unused parameter 'pvParameters' [-Wunused-parameter]
+void vTaskReadSensor(void *pvParameters)
+                           ^
+main.c(158): warning: function 'vTaskReadSensor' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+{
+^
+main.c(254): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                TFT_DrawLine(x1, y1, x2, y2, GREEN);
+                ~~~~~~~~~~~~ ^~
+main.c(254): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                TFT_DrawLine(x1, y1, x2, y2, GREEN);
+                ~~~~~~~~~~~~     ^~
+main.c(254): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                TFT_DrawLine(x1, y1, x2, y2, GREEN);
+                ~~~~~~~~~~~~         ^~
+main.c(254): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                TFT_DrawLine(x1, y1, x2, y2, GREEN);
+                ~~~~~~~~~~~~             ^~
+main.c(233): warning: unused variable 'last_spo2' [-Wunused-variable]
+    float last_hr = -1.0f, last_spo2 = -1.0f;  
+                           ^
+main.c(232): warning: unused variable 'display_buffer' [-Wunused-variable]
+    char display_buffer[50];
+         ^
+main.c(233): warning: unused variable 'last_hr' [-Wunused-variable]
+    float last_hr = -1.0f, last_spo2 = -1.0f;  
+          ^
+main.c(229): warning: unused parameter 'pvParameters' [-Wunused-parameter]
+void vTaskDisplayTFT(void *pvParameters)
+                           ^
+main.c(230): warning: function 'vTaskDisplayTFT' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+{
+^
+main.c(295): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+main.c(261): warning: unused parameter 'pvParameters' [-Wunused-parameter]
+void vTaskButton(void *pvParameters)
+                       ^
+main.c(262): warning: function 'vTaskButton' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+{
+^
+main.c(14): warning: no previous extern declaration for non-static variable 'buffer' [-Wmissing-variable-declarations]
+char buffer[50];
+     ^
+main.c(14): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+char buffer[50];
+^
+main.c(15): warning: no previous extern declaration for non-static variable 'ir_buffer' [-Wmissing-variable-declarations]
+uint32_t ir_buffer[BUFFER_SIZE];
+         ^
+main.c(15): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t ir_buffer[BUFFER_SIZE];
+^
+main.c(16): warning: no previous extern declaration for non-static variable 'red_buffer' [-Wmissing-variable-declarations]
+uint32_t red_buffer[BUFFER_SIZE];
+         ^
+main.c(16): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t red_buffer[BUFFER_SIZE];
+^
+main.c(27): warning: no previous extern declaration for non-static variable 'hr_history' [-Wmissing-variable-declarations]
+float hr_history[HR_HISTORY_SIZE];
+      ^
+main.c(27): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+float hr_history[HR_HISTORY_SIZE];
+^
+30 warnings generated.
+compiling main.c...
+linking...
+Program Size: Code=21022 RO-data=650 RW-data=8 ZI-data=10096  
+".\Objects\bai11.axf" - 0 Error(s), 30 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.7.0.pack
+                ARM.CMSIS.5.7.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.4.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
+                Keil.STM32F1xx_DFP.2.4.1
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: DMA Version: 1.3
+   * Component: Startup Version: 1.0.0
+   * Component: ADC Version: 3.6.0
+   * Component: BKP Version: 3.6.0
+   * Component: CAN Version: 3.6.0
+   * Component: CEC Version: 3.6.0
+   * Component: CRC Version: 3.6.0
+   * Component: DAC Version: 3.6.0
+   * Component: DBGMCU Version: 3.6.0
+   * Component: DMA Version: 3.6.0
+   * Component: EXTI Version: 3.6.0
+   * Component: FSMC Version: 3.6.0
+   * Component: Flash Version: 3.6.0
+   * Component: Framework Version: 3.6.0
+   * Component: GPIO Version: 3.6.0
+   * Component: I2C Version: 3.6.0
+   * Component: IWDG Version: 3.6.0
+   * Component: PWR Version: 3.6.0
+   * Component: RCC Version: 3.6.0
+   * Component: RTC Version: 3.6.0
+   * Component: SDIO Version: 3.6.0
+   * Component: SPI Version: 3.6.0
+   * Component: TIM Version: 3.6.0
+   * Component: USART Version: 3.6.0
+   * Component: WWDG Version: 3.6.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\Device\STM32F103C8
+  .\RTE\_Target_1
+  E:\KeilC\pack\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  E:\KeilC\pack\Keil\STM32F1xx_DFP\2.4.1\Device\Include
+  E:\KeilC\pack\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc
+  E:\KeilC\pack\Keil\STM32F1xx_DFP\2.4.1\RTE_Driver
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.4.0
+
+   * Component: Keil::Device:DMA:1.3
+      Include file:  RTE_Driver\DMA_STM32F10x.h
+      Source file:   RTE_Driver\DMA_STM32F10x.c
+
+   * Component: Keil::Device:Startup:1.0.0
+      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
+      Source file:   Device\Source\ARM\STM32F1xx_OPT.s
+      Source file:   Device\Source\system_stm32f10x.c
+      Include file:  RTE_Driver\Config\RTE_Device.h
+
+   * Component: Keil::Device:StdPeriph Drivers:ADC:3.6.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_adc.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_adc.h
+
+   * Component: Keil::Device:StdPeriph Drivers:BKP:3.6.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_bkp.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_bkp.h
+
+   * Component: Keil::Device:StdPeriph Drivers:CAN:3.6.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_can.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_can.c
+
+   * Component: Keil::Device:StdPeriph Drivers:CEC:3.6.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_cec.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_cec.h
+
+   * Component: Keil::Device:StdPeriph Drivers:CRC:3.6.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_crc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_crc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:DAC:3.6.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_dac.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_dac.h
+
+   * Component: Keil::Device:StdPeriph Drivers:DBGMCU:3.6.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_dbgmcu.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_dbgmcu.c
+
+   * Component: Keil::Device:StdPeriph Drivers:DMA:3.6.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_dma.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_dma.c
+
+   * Component: Keil::Device:StdPeriph Drivers:EXTI:3.6.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_exti.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_exti.c
+
+   * Component: Keil::Device:StdPeriph Drivers:FSMC:3.6.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_fsmc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_fsmc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:Flash:3.6.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_flash.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_flash.h
+
+   * Component: Keil::Device:StdPeriph Drivers:Framework:3.6.0
+      Source file:   Device\StdPeriph_Driver\src\misc.c
+      Include file:  Device\StdPeriph_Driver\templates\stm32f10x_it.h
+      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_conf.h
+      Include file:  Device\StdPeriph_Driver\inc\misc.h
+      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_it.c
+
+   * Component: Keil::Device:StdPeriph Drivers:GPIO:3.6.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_gpio.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_gpio.c
+
+   * Component: Keil::Device:StdPeriph Drivers:I2C:3.6.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_i2c.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_i2c.h
+
+   * Component: Keil::Device:StdPeriph Drivers:IWDG:3.6.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_iwdg.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_iwdg.c
+
+   * Component: Keil::Device:StdPeriph Drivers:PWR:3.6.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_pwr.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_pwr.c
+
+   * Component: Keil::Device:StdPeriph Drivers:RCC:3.6.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_rcc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_rcc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:RTC:3.6.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_rtc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_rtc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:SDIO:3.6.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_sdio.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_sdio.h
+
+   * Component: Keil::Device:StdPeriph Drivers:SPI:3.6.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_spi.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_spi.h
+
+   * Component: Keil::Device:StdPeriph Drivers:TIM:3.6.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_tim.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_tim.c
+
+   * Component: Keil::Device:StdPeriph Drivers:USART:3.6.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_usart.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_usart.c
+
+   * Component: Keil::Device:StdPeriph Drivers:WWDG:3.6.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_wwdg.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_wwdg.c
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
