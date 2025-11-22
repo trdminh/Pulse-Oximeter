@@ -20,9 +20,11 @@ MAX30102 là cảm biến dùng để đo giá trị nhịp tim và SpO2. Cảm 
 Màn hình TFT là màn hình hiển thị màu và có cảm ứng sử dụng giao thức SPI. [Mua tại đây](https://shopee.vn/-C%C3%B3-s%E1%BA%B5n-M%C3%A0n-h%C3%ACnh-LCD-IPS-TFT-OLED-Giao-ti%E1%BA%BFp-ST7735-0.96-1.3-1.44-1.8-inch-i.365513789.24361576775?extraParams=%7B%22display_model_id%22%3A178055146186%2C%22model_selection_logic%22%3A3%7D&sp_atk=f4071d89-81b1-4a2b-a6f4-46adc5901ad6&xptdk=f4071d89-81b1-4a2b-a6f4-46adc5901ad6)
 
 ### 2.4 Nút nhấn
-<img width="1200" height="1200" alt="image" src="https://github.com/user-attachments/assets/17738bfe-65cd-41c2-a1cf-9b7b7e5fda28" />
+<img width="549" height="431" alt="image" src="https://github.com/user-attachments/assets/34c920b2-7d3c-47f6-a3f2-b8ccfbac0915" />
+
 
 ## 3. Sơ đồ hệ thống
+
 
 
 
