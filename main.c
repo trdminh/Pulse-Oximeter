@@ -182,13 +182,13 @@ void vTaskReadSensor(void *pvParameters)
                 if (heart_rate == 0 && spo2 == 0)
                 {
                     zero_count++;
-                    if (zero_count >= 10)
+                    if (zero_count >= 120)
                     {
                         device_active = 0;
                         uint8_t mode = MAX30102_ReadReg(REG_MODE_CONFIG);
                         MAX30102_WriteReg(REG_MODE_CONFIG, mode | 0x80);
                         GPIO_WriteBit(TFT_BL_PORT, TFT_BL_PIN, Bit_RESET);
-                        UART_SendString("Auto shutdown due to no signal\r\n");
+                        UART_SendString("Shutdown\r\n");
                     }
                 }
                 else
@@ -215,9 +215,9 @@ void vTaskReadSensor(void *pvParameters)
                 uint8_t mode = MAX30102_ReadReg(REG_MODE_CONFIG);
                 MAX30102_WriteReg(REG_MODE_CONFIG, mode | 0x80);
                 GPIO_WriteBit(TFT_BL_PORT, TFT_BL_PIN, Bit_RESET);
-                UART_SendString("Auto shutdown due to no signal\r\n");
+                UART_SendString("Shut down\r\n");
             }
-            sprintf(buffer, "No signal: Heart Rate: 0.0 BPM, SpO2: 0.0%%\r\n");
+            sprintf(buffer, "Heart Rate: 0.0 BPM, SpO2: 0.0%%\r\n");
             UART_SendString(buffer);
         }
         vTaskDelay(pdMS_TO_TICKS(100));  
