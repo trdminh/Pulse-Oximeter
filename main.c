@@ -271,7 +271,6 @@ void vTaskButton(void *pvParameters)
                 uint8_t mode = MAX30102_ReadReg(REG_MODE_CONFIG);
                 MAX30102_WriteReg(REG_MODE_CONFIG, mode & ~0x80);
                 GPIO_WriteBit(TFT_BL_PORT, TFT_BL_PIN, Bit_SET); 
-                TFT_DisplayOn(); // Turn on display
                 UART_SendString("Device activated\r\n");
             }
             else
@@ -280,8 +279,8 @@ void vTaskButton(void *pvParameters)
                 uint8_t mode = MAX30102_ReadReg(REG_MODE_CONFIG);
                 MAX30102_WriteReg(REG_MODE_CONFIG, mode | 0x80);
                 GPIO_WriteBit(TFT_BL_PORT, TFT_BL_PIN, Bit_RESET); 
+                TFT_ClearScreen();
                 TFT_FillScreen(BLACK); 
-                TFT_DisplayOff(); 
                 UART_SendString("Device deactivated\r\n");
                 
             }
