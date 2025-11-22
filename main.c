@@ -11,6 +11,7 @@
 #define PRIORITY_TFT 2
 
 
+
 char buffer[50];
 uint32_t ir_buffer[BUFFER_SIZE];
 uint32_t red_buffer[BUFFER_SIZE];
