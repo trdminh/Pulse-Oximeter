@@ -43,9 +43,9 @@ static void TFT_SPI_Init(void) {
 static void TFT_GPIO_Init(void) {
     GPIO_InitTypeDef GPIO_InitStructure;
 
-    RCC_APB2PeriphClockCmd(TFT_CS_CLK | TFT_DC_CLK | TFT_RST_CLK | TFT_BL_CLK, ENABLE);
+    RCC_APB2PeriphClockCmd(TFT_CS_CLK | TFT_DC_CLK | TFT_RST_CLK | TFT_BL_CLK | TFT_PWR_CLK, ENABLE);
 
-    GPIO_InitStructure.GPIO_Pin = TFT_CS_PIN | TFT_DC_PIN | TFT_RST_PIN | TFT_BL_PIN;
+    GPIO_InitStructure.GPIO_Pin = TFT_CS_PIN | TFT_DC_PIN | TFT_RST_PIN | TFT_BL_PIN | TFT_PWR_PIN;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
     GPIO_Init(TFT_CS_PORT, &GPIO_InitStructure);
@@ -54,6 +54,7 @@ static void TFT_GPIO_Init(void) {
     GPIO_SetBits(TFT_DC_PORT, TFT_DC_PIN); 
     GPIO_SetBits(TFT_RST_PORT, TFT_RST_PIN); 
     GPIO_SetBits(TFT_BL_PORT, TFT_BL_PIN); 
+    GPIO_SetBits(TFT_PWR_PORT, TFT_PWR_PIN);  // Turn on power
 }
 
 // Reset the TFT
@@ -175,6 +176,11 @@ static void TFT_SendInitCommands(void) {
 void TFT_Init(void) {
     TFT_GPIO_Init();
     TFT_SPI_Init();
+    // Cycle power for proper reset
+    GPIO_ResetBits(TFT_PWR_PORT, TFT_PWR_PIN);
+    for(volatile int i = 0; i < 100000; i++);
+    GPIO_SetBits(TFT_PWR_PORT, TFT_PWR_PIN);
+    for(volatile int i = 0; i < 100000; i++);
     TFT_Reset();
     TFT_SendInitCommands();
     TFT_SetRotation(1);
@@ -465,4 +471,12 @@ void TFT_DisplayOff(void) {
 
 void TFT_DisplayOn(void) {
     TFT_WriteCommand(0x29); // Display ON
+}
+
+void TFT_PowerOff(void) {
+    GPIO_ResetBits(TFT_PWR_PORT, TFT_PWR_PIN);  // Turn off power
+}
+
+void TFT_PowerOn(void) {
+    GPIO_SetBits(TFT_PWR_PORT, TFT_PWR_PIN);  // Turn on power
 }

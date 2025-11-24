@@ -28,6 +28,12 @@ int zero_count = 0;
 float hr_history[HR_HISTORY_SIZE];
 int hr_index = 0;
 
+typedef struct {
+	uint8_t old_state_btn;
+	uint8_t new_state_btn;
+} State_BTN;
+
+State_BTN btn;
 void I2C_ScanAddresses(void);
 uint8_t I2C_CheckAddress(uint8_t address);
 
@@ -228,11 +234,13 @@ void vTaskDisplayTFT(void *pvParameters)
 {
     UART_SendString("TFT task started\r\n");
     char display_buffer[50];
-    float last_hr = -1.0f, last_spo2 = -1.0f;  
+    float last_hr = -1.0f, last_spo2 = -1.0f;
+		TFT_ClearScreen();
     while(1)
     {
         if (!device_active)
         {
+            TFT_ClearScreen();
             vTaskDelay(pdMS_TO_TICKS(1000));
             continue;
         }
@@ -261,9 +269,11 @@ void vTaskButton(void *pvParameters)
     UART_SendString("Button task started\r\n");
     while(1)
     {
-        if(GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_11) == Bit_RESET) 
-        {
-            device_active = !device_active;
+				btn.old_state_btn = btn.new_state_btn;
+				btn.new_state_btn = GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_11);
+				if (btn.new_state_btn != btn.old_state_btn && btn.new_state_btn == 0)
+				{
+						device_active = !device_active;
             if(device_active)
             {
                 // Wake up
@@ -280,12 +290,13 @@ void vTaskButton(void *pvParameters)
                 MAX30102_WriteReg(REG_MODE_CONFIG, mode | 0x80);
                 GPIO_WriteBit(TFT_BL_PORT, TFT_BL_PIN, Bit_RESET); 
                 TFT_ClearScreen();
-                TFT_FillScreen(BLACK); 
+                TFT_FillScreen(BLACK);
                 UART_SendString("Device deactivated\r\n");
                 
             }
-            vTaskDelay(pdMS_TO_TICKS(500)); 
-        }
-        vTaskDelay(pdMS_TO_TICKS(100));
-    }
+							vTaskDelay(pdMS_TO_TICKS(500)); 
+					}
+					vTaskDelay(pdMS_TO_TICKS(100));
+					}
+            
 }

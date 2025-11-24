@@ -23,6 +23,10 @@
 #define TFT_BL_PIN      GPIO_Pin_1
 #define TFT_BL_CLK      RCC_APB2Periph_GPIOA
 
+#define TFT_PWR_PORT    GPIOA
+#define TFT_PWR_PIN     GPIO_Pin_2
+#define TFT_PWR_CLK     RCC_APB2Periph_GPIOA
+
 #define TFT_SCK_PORT    GPIOA
 #define TFT_SCK_PIN     GPIO_Pin_5
 #define TFT_MISO_PORT   GPIOA
@@ -64,5 +68,7 @@ void TFT_DrawChar(uint16_t x, uint16_t y, char c, uint16_t color, uint16_t bg);
 void TFT_DrawString(uint16_t x, uint16_t y, const char* str, uint16_t color, uint16_t bg);
 void TFT_DisplayOff(void);
 void TFT_DisplayOn(void);
+void TFT_PowerOff(void);
+void TFT_PowerOn(void);
 
 #endif

@@ -21,7 +21,7 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
 Dialog DLL:      TCM.DLL V1.46.0.0
  
 <h2>Project:</h2>
-E:\Project\2025\bai11\bai11.uvprojx
+E:\Project\2025\Pulse Oximeter\bai11.uvprojx
 Project File Date:  11/22/2025
 
 <h2>Output:</h2>
@@ -39,125 +39,131 @@ main.c(7): warning: In file included from...
 ./max30102.h(44): warning: no newline at end of file [-Wnewline-eof]
 #endif
       ^
-main.c(17): warning: no previous extern declaration for non-static variable 'buffer_index' [-Wmissing-variable-declarations]
+main.c(18): warning: no previous extern declaration for non-static variable 'buffer_index' [-Wmissing-variable-declarations]
 int buffer_index = 0;
     ^
-main.c(17): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+main.c(18): note: declare 'static' if the variable is not intended to be used outside of this translation unit
 int buffer_index = 0;
 ^
-main.c(19): warning: no previous extern declaration for non-static variable 'global_heart_rate' [-Wmissing-variable-declarations]
+main.c(20): warning: no previous extern declaration for non-static variable 'global_heart_rate' [-Wmissing-variable-declarations]
 float global_heart_rate = 0.0f;
-      ^
-main.c(19): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-float global_heart_rate = 0.0f;
-^
-main.c(20): warning: no previous extern declaration for non-static variable 'global_spo2' [-Wmissing-variable-declarations]
-float global_spo2 = 0.0f;
       ^
 main.c(20): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+float global_heart_rate = 0.0f;
+^
+main.c(21): warning: no previous extern declaration for non-static variable 'global_spo2' [-Wmissing-variable-declarations]
+float global_spo2 = 0.0f;
+      ^
+main.c(21): note: declare 'static' if the variable is not intended to be used outside of this translation unit
 float global_spo2 = 0.0f;
 ^
-main.c(23): warning: no previous extern declaration for non-static variable 'device_active' [-Wmissing-variable-declarations]
+main.c(24): warning: no previous extern declaration for non-static variable 'device_active' [-Wmissing-variable-declarations]
 int device_active = 1;
-    ^
-main.c(23): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-int device_active = 1;
-^
-main.c(24): warning: no previous extern declaration for non-static variable 'zero_count' [-Wmissing-variable-declarations]
-int zero_count = 0;
     ^
 main.c(24): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int device_active = 1;
+^
+main.c(25): warning: no previous extern declaration for non-static variable 'zero_count' [-Wmissing-variable-declarations]
+int zero_count = 0;
+    ^
+main.c(25): note: declare 'static' if the variable is not intended to be used outside of this translation unit
 int zero_count = 0;
 ^
-main.c(28): warning: no previous extern declaration for non-static variable 'hr_index' [-Wmissing-variable-declarations]
+main.c(29): warning: no previous extern declaration for non-static variable 'hr_index' [-Wmissing-variable-declarations]
 int hr_index = 0;
     ^
-main.c(28): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+main.c(29): note: declare 'static' if the variable is not intended to be used outside of this translation unit
 int hr_index = 0;
 ^
-main.c(184): warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+main.c(188): warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
                 if (heart_rate == 0 && spo2 == 0)
                     ~~~~~~~~~~ ^  ~
-main.c(184): warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+main.c(188): warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
                 if (heart_rate == 0 && spo2 == 0)
                                        ~~~~ ^  ~
-main.c(203): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+main.c(207): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
                 sprintf(buffer, "Heart Rate: %.1f BPM, SpO2: %.1f%%\r\n", heart_rate, spo2);
                 ~~~~~~~                                                   ^~~~~~~~~~
-main.c(203): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+main.c(207): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
                 sprintf(buffer, "Heart Rate: %.1f BPM, SpO2: %.1f%%\r\n", heart_rate, spo2);
                 ~~~~~~~                                                               ^~~~
-main.c(157): warning: unused parameter 'pvParameters' [-Wunused-parameter]
+main.c(161): warning: unused parameter 'pvParameters' [-Wunused-parameter]
 void vTaskReadSensor(void *pvParameters)
                            ^
-main.c(158): warning: function 'vTaskReadSensor' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+main.c(162): warning: function 'vTaskReadSensor' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
 {
 ^
-main.c(254): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+main.c(260): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
                 TFT_DrawLine(x1, y1, x2, y2, GREEN);
                 ~~~~~~~~~~~~ ^~
-main.c(254): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+main.c(260): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
                 TFT_DrawLine(x1, y1, x2, y2, GREEN);
                 ~~~~~~~~~~~~     ^~
-main.c(254): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+main.c(260): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
                 TFT_DrawLine(x1, y1, x2, y2, GREEN);
                 ~~~~~~~~~~~~         ^~
-main.c(254): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+main.c(260): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
                 TFT_DrawLine(x1, y1, x2, y2, GREEN);
                 ~~~~~~~~~~~~             ^~
-main.c(233): warning: unused variable 'last_spo2' [-Wunused-variable]
-    float last_hr = -1.0f, last_spo2 = -1.0f;  
-                           ^
-main.c(232): warning: unused variable 'display_buffer' [-Wunused-variable]
+main.c(236): warning: unused variable 'display_buffer' [-Wunused-variable]
     char display_buffer[50];
          ^
-main.c(233): warning: unused variable 'last_hr' [-Wunused-variable]
-    float last_hr = -1.0f, last_spo2 = -1.0f;  
+main.c(237): warning: unused variable 'last_hr' [-Wunused-variable]
+    float last_hr = -1.0f, last_spo2 = -1.0f;
           ^
-main.c(229): warning: unused parameter 'pvParameters' [-Wunused-parameter]
+main.c(237): warning: unused variable 'last_spo2' [-Wunused-variable]
+    float last_hr = -1.0f, last_spo2 = -1.0f;
+                           ^
+main.c(233): warning: unused parameter 'pvParameters' [-Wunused-parameter]
 void vTaskDisplayTFT(void *pvParameters)
                            ^
-main.c(230): warning: function 'vTaskDisplayTFT' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+main.c(234): warning: function 'vTaskDisplayTFT' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
 {
 ^
-main.c(295): warning: no newline at end of file [-Wnewline-eof]
+main.c(302): warning: no newline at end of file [-Wnewline-eof]
 }
  ^
-main.c(261): warning: unused parameter 'pvParameters' [-Wunused-parameter]
+main.c(267): warning: unused parameter 'pvParameters' [-Wunused-parameter]
 void vTaskButton(void *pvParameters)
                        ^
-main.c(262): warning: function 'vTaskButton' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+main.c(268): warning: function 'vTaskButton' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
 {
 ^
-main.c(14): warning: no previous extern declaration for non-static variable 'buffer' [-Wmissing-variable-declarations]
+main.c(15): warning: no previous extern declaration for non-static variable 'buffer' [-Wmissing-variable-declarations]
 char buffer[50];
      ^
-main.c(14): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+main.c(15): note: declare 'static' if the variable is not intended to be used outside of this translation unit
 char buffer[50];
 ^
-main.c(15): warning: no previous extern declaration for non-static variable 'ir_buffer' [-Wmissing-variable-declarations]
+main.c(16): warning: no previous extern declaration for non-static variable 'ir_buffer' [-Wmissing-variable-declarations]
 uint32_t ir_buffer[BUFFER_SIZE];
-         ^
-main.c(15): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-uint32_t ir_buffer[BUFFER_SIZE];
-^
-main.c(16): warning: no previous extern declaration for non-static variable 'red_buffer' [-Wmissing-variable-declarations]
-uint32_t red_buffer[BUFFER_SIZE];
          ^
 main.c(16): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t ir_buffer[BUFFER_SIZE];
+^
+main.c(17): warning: no previous extern declaration for non-static variable 'red_buffer' [-Wmissing-variable-declarations]
+uint32_t red_buffer[BUFFER_SIZE];
+         ^
+main.c(17): note: declare 'static' if the variable is not intended to be used outside of this translation unit
 uint32_t red_buffer[BUFFER_SIZE];
 ^
-main.c(27): warning: no previous extern declaration for non-static variable 'hr_history' [-Wmissing-variable-declarations]
+main.c(28): warning: no previous extern declaration for non-static variable 'hr_history' [-Wmissing-variable-declarations]
 float hr_history[HR_HISTORY_SIZE];
       ^
-main.c(27): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+main.c(28): note: declare 'static' if the variable is not intended to be used outside of this translation unit
 float hr_history[HR_HISTORY_SIZE];
 ^
-30 warnings generated.
+main.c(36): warning: no previous extern declaration for non-static variable 'btn' [-Wmissing-variable-declarations]
+State_BTN btn;
+          ^
+main.c(36): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+State_BTN btn;
+^
+31 warnings generated.
 compiling main.c...
 linking...
-Program Size: Code=21022 RO-data=650 RW-data=8 ZI-data=10096  
-".\Objects\bai11.axf" - 0 Error(s), 30 Warning(s).
+Program Size: Code=21106 RO-data=618 RW-data=8 ZI-data=10096  
+".\Objects\bai11.axf" - 0 Error(s), 31 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -214,34 +220,34 @@ Package Vendor: Keil
       Source file:   RTE_Driver\DMA_STM32F10x.c
 
    * Component: Keil::Device:Startup:1.0.0
+      Include file:  RTE_Driver\Config\RTE_Device.h
       Source file:   Device\Source\ARM\startup_stm32f10x_md.s
       Source file:   Device\Source\ARM\STM32F1xx_OPT.s
       Source file:   Device\Source\system_stm32f10x.c
-      Include file:  RTE_Driver\Config\RTE_Device.h
 
    * Component: Keil::Device:StdPeriph Drivers:ADC:3.6.0
       Source file:   Device\StdPeriph_Driver\src\stm32f10x_adc.c
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_adc.h
 
    * Component: Keil::Device:StdPeriph Drivers:BKP:3.6.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f10x_bkp.c
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_bkp.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_bkp.c
 
    * Component: Keil::Device:StdPeriph Drivers:CAN:3.6.0
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_can.h
       Source file:   Device\StdPeriph_Driver\src\stm32f10x_can.c
 
    * Component: Keil::Device:StdPeriph Drivers:CEC:3.6.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f10x_cec.c
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_cec.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_cec.c
 
    * Component: Keil::Device:StdPeriph Drivers:CRC:3.6.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_crc.h
       Source file:   Device\StdPeriph_Driver\src\stm32f10x_crc.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_crc.h
 
    * Component: Keil::Device:StdPeriph Drivers:DAC:3.6.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f10x_dac.c
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_dac.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_dac.c
 
    * Component: Keil::Device:StdPeriph Drivers:DBGMCU:3.6.0
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_dbgmcu.h
@@ -252,8 +258,8 @@ Package Vendor: Keil
       Source file:   Device\StdPeriph_Driver\src\stm32f10x_dma.c
 
    * Component: Keil::Device:StdPeriph Drivers:EXTI:3.6.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_exti.h
       Source file:   Device\StdPeriph_Driver\src\stm32f10x_exti.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_exti.h
 
    * Component: Keil::Device:StdPeriph Drivers:FSMC:3.6.0
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_fsmc.h
@@ -265,18 +271,18 @@ Package Vendor: Keil
 
    * Component: Keil::Device:StdPeriph Drivers:Framework:3.6.0
       Source file:   Device\StdPeriph_Driver\src\misc.c
-      Include file:  Device\StdPeriph_Driver\templates\stm32f10x_it.h
       Source file:   Device\StdPeriph_Driver\templates\stm32f10x_conf.h
       Include file:  Device\StdPeriph_Driver\inc\misc.h
       Source file:   Device\StdPeriph_Driver\templates\stm32f10x_it.c
+      Include file:  Device\StdPeriph_Driver\templates\stm32f10x_it.h
 
    * Component: Keil::Device:StdPeriph Drivers:GPIO:3.6.0
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_gpio.h
       Source file:   Device\StdPeriph_Driver\src\stm32f10x_gpio.c
 
    * Component: Keil::Device:StdPeriph Drivers:I2C:3.6.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f10x_i2c.c
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_i2c.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_i2c.c
 
    * Component: Keil::Device:StdPeriph Drivers:IWDG:3.6.0
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_iwdg.h
@@ -295,16 +301,16 @@ Package Vendor: Keil
       Source file:   Device\StdPeriph_Driver\src\stm32f10x_rtc.c
 
    * Component: Keil::Device:StdPeriph Drivers:SDIO:3.6.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f10x_sdio.c
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_sdio.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_sdio.c
 
    * Component: Keil::Device:StdPeriph Drivers:SPI:3.6.0
       Source file:   Device\StdPeriph_Driver\src\stm32f10x_spi.c
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_spi.h
 
    * Component: Keil::Device:StdPeriph Drivers:TIM:3.6.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_tim.h
       Source file:   Device\StdPeriph_Driver\src\stm32f10x_tim.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_tim.h
 
    * Component: Keil::Device:StdPeriph Drivers:USART:3.6.0
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_usart.h

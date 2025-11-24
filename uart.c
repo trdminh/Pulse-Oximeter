@@ -1,4 +1,6 @@
 #include "uart.h"
+#include "stm32f10x_exti.h"
+#include "misc.h"
 
 
 void GPIO_Config(void)
@@ -11,10 +13,10 @@ void GPIO_Config(void)
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_OD;
     GPIO_Init(GPIOB, &GPIO_InitStructure);
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_11;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_10MHz;
-	GPIO_Init(GPIOB, &GPIO_InitStructure);
+		GPIO_InitStructure.GPIO_Pin = GPIO_Pin_11;
+		GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
+		GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+		GPIO_Init(GPIOB, &GPIO_InitStructure);
 }
 void UART_Init(void) {
     GPIO_InitTypeDef gpio;
